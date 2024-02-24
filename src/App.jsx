@@ -14,17 +14,23 @@ function App() {
       }}
     >
       <div className="rotulo">
-        <h1>
-          Triangulo de Kapp
-        </h1>
+        <h1>Triangulo de Kapp</h1>
         <p>
-          Nota: Para rotar el objeto V1, simplemente haz clic en cualquier parte y arrastra el cursor. Si arrastras hacia arriba, V1 rotará en sentido de las manecillas del reloj; mientras que si arrastras hacia abajo,
+          Nota: Para rotar el objeto V1, simplemente haz clic en cualquier parte
+          y arrastra el cursor. Si arrastras hacia arriba, V1 rotará en sentido
+          de las manecillas del reloj; mientras que si arrastras hacia abajo,
           rotará en sentido contrario a las manecillas del reloj.
         </p>
       </div>
       <div className="rotulo2">
         <h3>
-          Hecho por: Beloqui Cesar
+          Hecho por:{" "}
+          <a
+            href="https://api.whatsapp.com/send?phone=5493794142669"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            Beloqui Cesar
+          </a>
         </h3>
       </div>
       <LineChart />

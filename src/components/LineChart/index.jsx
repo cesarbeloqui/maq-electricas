@@ -201,6 +201,10 @@ const LineChart = () => {
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
+        onTouchStart={handleMouseEnter}
+        onTouchEnd={handleMouseLeave}
+        onTouchMove={handleMouseMove}
+        onTouchCancel={handleMouseLeave}
       />
     </div>
   );
