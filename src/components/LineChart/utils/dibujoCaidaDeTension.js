@@ -29,7 +29,7 @@ const dibujoCaidaDeTension = (
     transformarCenterX(centerX, V1x),
     transformarCenterY(centerY, V1y),
     {
-      text: "Veq",
+      text: "Vmaq",
       posicionX: 50,
       posicionY: -25,
     }
