@@ -1,4 +1,4 @@
-const drawCircle = (ctx, centerX, centerY, radius) => {
+const drawCircle = (ctx, centerX, centerY, radius, color) => {
   // Iniciar el trazado del círculo
   ctx.beginPath();
 
@@ -7,7 +7,7 @@ const drawCircle = (ctx, centerX, centerY, radius) => {
   // Establecer el estilo de línea del círculo
   ctx.setLineDash([]);
   // Establecer el color de borde del círculo
-  ctx.strokeStyle = "white"; // Puedes cambiar el color según necesites
+  ctx.strokeStyle = color ? color : "white"; // Puedes cambiar el color según necesites
 
   // Establecer el grosor de línea del círculo
   ctx.lineWidth = 1; // Puedes ajustar el grosor según necesites

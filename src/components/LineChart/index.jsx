@@ -57,7 +57,7 @@ const LineChart = () => {
     drawHorizontalAxis(ctx, containerWidth, containerHeight, centerY);
 
     //Definicion del circulo de tension
-    drawCircle(ctx, centerX, centerY, tension1);
+    drawCircle(ctx, centerX, centerY, tension1, "#ff3232");
     //Dibujar Tensión V1
     vectorConModuloYangulo(
       ctx,
@@ -89,7 +89,8 @@ const LineChart = () => {
       Xd1,
       Xd2,
       I1,
-      tension1
+      tension1,
+      "#FFFF00"
     );
     const coordenadasInicialIR = {
       x: transformarCenterX(centerX, centerVeqX),
@@ -101,7 +102,8 @@ const LineChart = () => {
       "-I1R2",
       coordenadasInicialIR,
       I1,
-      R2
+      R2,
+      "#00FFFF"
     );
     //Dibujo -jI1Xd2'
     const coordenadasFinaljIX = dibujojIX(
@@ -113,7 +115,8 @@ const LineChart = () => {
       },
       coordenadasFinalI1R2,
       I1,
-      Xd2
+      Xd2,
+      "#FFA500"
     );
 
     //Dibujo I1R1
@@ -122,7 +125,8 @@ const LineChart = () => {
       "I1R1",
       coordenadasFinaljIX,
       I1,
-      R2
+      R2,
+      "#00FFFF"
     );
     //Dibujo jI1Xd1
     const coordenadasFinaljI1Xd1 = dibujojIX(
@@ -134,7 +138,8 @@ const LineChart = () => {
       },
       coordenadasFinalI1R1,
       I1,
-      Xd2
+      Xd2,
+      "#FFA500"
     );
     // Dibujo V2
     drawArrow(
@@ -147,14 +152,16 @@ const LineChart = () => {
         text: "V₂'",
         posicionX: 5,
         posicionY: 5,
-      }
+      },
+      "#FF00FF"
     );
     //Definicion del circulo de tension 2
     drawCircle(
       ctx,
       centerX + I1 * (Xd1 + Xd2),
       centerY + I1 * (R1 + R2),
-      tension1
+      tension1,
+      "#FF00FF"
     );
     //Dibujar Tensión I1
     const I1angle = 90 * (Math.PI / 180);
@@ -162,7 +169,7 @@ const LineChart = () => {
       text: "I₁",
       posicionX: 10,
       posicionY: -20,
-    });
+    },"green");
   }, [fi1]);
 
   return (

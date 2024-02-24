@@ -11,7 +11,8 @@ const dibujoCaidaDeTension = (
   Xd1,
   Xd2,
   I1,
-  tension1
+    tension1,
+  color
 ) => {
   const VeqY = I1 * (R1 + R2);
   const VeqX = -I1 * (Xd1 + Xd2);
@@ -32,7 +33,8 @@ const dibujoCaidaDeTension = (
       text: "Vmaq",
       posicionX: 50,
       posicionY: -25,
-    }
+      },
+    color
   );
   return { centerVeqX, centerVeqY };
 };
