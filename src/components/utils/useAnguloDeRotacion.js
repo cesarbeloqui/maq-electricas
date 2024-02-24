@@ -10,8 +10,19 @@ const useAnguloDeRotacion = () => {
   const [anguloInicial, setAnguloInicial] = useState(null);
   const [anguloFinal, setAnguloFinal] = useState(null);
   const [isClicking, setIsClicking] = useState(false);
+  const [cursorType, setCursorType] = useState("default");
+  // Manejador de eventos cuando el cursor entra al canvas
+  const handleMouseEnter = () => {
+    setCursorType("pointer"); // Cambiar el cursor a la mano
+  };
+
+  // Manejador de eventos cuando el cursor sale del canvas
+  const handleMouseLeave = () => {
+    setCursorType("default"); // Restablecer el cursor por defecto
+  };
 
   const handleMouseDown = (event) => {
+    setCursorType("grabbing");
     setIsClicking(true);
     setAnguloInicial(null);
     setAnguloFinal(null);
@@ -44,6 +55,7 @@ const useAnguloDeRotacion = () => {
   };
 
   const handleMouseUp = () => {
+    setCursorType("pointer");
     setIsClicking(false);
     setAnguloFinal(Math.atan2(XY.y, XY.x));
   };
@@ -70,10 +82,13 @@ const useAnguloDeRotacion = () => {
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
+    handleMouseEnter,
+    handleMouseLeave,
     XY,
     container,
     anguloInicial,
     anguloFinal,
+    cursorType,
   };
 };
 

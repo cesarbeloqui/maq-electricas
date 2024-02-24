@@ -2,8 +2,29 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
   background-color: #3b4453;
+}
+.rotulo {
+  color:white;
+  position: absolute;
+  background: #00000065;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 20rem;
+  top: 2rem;
+  left: 3rem;
+}
+.rotulo2 {
+  color:white;
+  position: absolute;
+  background: #00000065;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: auto;
+  top: 2rem;
+  right: 3rem;
 }

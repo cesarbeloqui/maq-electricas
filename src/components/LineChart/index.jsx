@@ -20,10 +20,13 @@ const LineChart = () => {
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
+    handleMouseEnter,
+    handleMouseLeave,
     XY,
     container,
     anguloInicial,
     anguloFinal,
+    cursorType,
   } = useAnguloDeRotacion();
 
   const [fi1, setFi1] = useState((41 + 90) * (Math.PI / 180));
@@ -165,11 +168,19 @@ const LineChart = () => {
     );
     //Dibujar Tensión I1
     const I1angle = 90 * (Math.PI / 180);
-    vectorConModuloYangulo(ctx, centerX, centerY, I1, I1angle, {
-      text: "I₁",
-      posicionX: 10,
-      posicionY: -20,
-    },"green");
+    vectorConModuloYangulo(
+      ctx,
+      centerX,
+      centerY,
+      I1,
+      I1angle,
+      {
+        text: "I₁",
+        posicionX: 10,
+        posicionY: -20,
+      },
+      "green"
+    );
   }, [fi1]);
 
   return (
@@ -181,9 +192,12 @@ const LineChart = () => {
       }}
     >
       <canvas
+        style={{ cursor: cursorType }}
         ref={canvasRef}
         width="1300vw"
         height="1000vw"
+        onMouseLeave={handleMouseLeave}
+        onMouseEnter={handleMouseEnter}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
