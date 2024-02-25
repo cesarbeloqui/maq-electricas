@@ -14,7 +14,7 @@ import {
 import dibujoIR from "./utils/dibujoIR";
 import dibujojIX from "./utils/dibujojIX";
 
-const LineChart = () => {
+const LineChart = ({ tension1, fi1, setFi1, I1, R2, R1, Xd1, Xd2 }) => {
   const {
     canvasRef,
     handleMouseDown,
@@ -29,11 +29,9 @@ const LineChart = () => {
     cursorType,
   } = useAnguloDeRotacion();
 
-  const [fi1, setFi1] = useState((41 + 90) * (Math.PI / 180));
-
   useEffect(() => {
     if (anguloFinal !== null && anguloInicial !== null) {
-      setFi1(fi1 + anguloFinal - anguloInicial);
+      setFi1(parseFloat((fi1 + anguloFinal - anguloInicial).toFixed(2)));
     }
   }, [anguloFinal, anguloFinal]);
 
@@ -53,7 +51,6 @@ const LineChart = () => {
     //Definicion del centro de coordenadas
     const centerX = containerWidth / 2;
     const centerY = containerHeight / 2;
-    const tension1 = 500 * 0.8;
     //definicion del eje vertical
     drawVerticalAxis(ctx, containerWidth, containerHeight, centerX);
     //DEfinicion del eje horizontal
@@ -77,11 +74,7 @@ const LineChart = () => {
     );
 
     // Dibujo caida de tension
-    const R2 = 0.16 * 0.8;
-    const R1 = 0.16 * 0.8;
-    const Xd1 = 0.32 * 0.8;
-    const Xd2 = 0.32 * 0.8;
-    const I1 = 600 * 0.8;
+
     const { centerVeqX, centerVeqY } = dibujoCaidaDeTension(
       ctx,
       centerX,
@@ -128,7 +121,7 @@ const LineChart = () => {
       "I1R1",
       coordenadasFinaljIX,
       I1,
-      R2,
+      R1,
       "#00FFFF"
     );
     //Dibujo jI1Xd1
@@ -181,7 +174,7 @@ const LineChart = () => {
       },
       "green"
     );
-  }, [fi1]);
+  }, [tension1, fi1, setFi1, I1, R2, R1, Xd1, Xd2]);
 
   return (
     <div
