@@ -22,8 +22,6 @@ const LineChart = ({ tension1, fi1, setFi1, I1, R2, R1, Xd1, Xd2 }) => {
     handleMouseUp,
     handleMouseEnter,
     handleMouseLeave,
-    XY,
-    container,
     anguloInicial,
     anguloFinal,
     cursorType,
