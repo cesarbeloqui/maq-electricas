@@ -17,6 +17,10 @@ body {
   width: 20rem;
   top: 2rem;
   left: 3rem;
+  @media (max-width: 768px) {
+    top: 1rem;
+    left: 1.7rem;
+  }
 }
 .rotulo2 {
   color: white;

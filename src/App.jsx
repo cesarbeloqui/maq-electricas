@@ -43,8 +43,20 @@ function App() {
   const [Xd2, setXd2] = useState(0.32 * 0.8);
   return (
     <ThemeProvider theme={darkTheme}>
+      <DivStilado2>
+        <TituloNota
+          titulo="Atencion"
+          cuerpo="Esta aplicacion solo funciona desde la pc"
+        />
+      </DivStilado2>
       <DivStilado>
-        <TituloNota />
+        <TituloNota
+          titulo="Triangulo de Kapp"
+          cuerpo="Nota: Para rotar el objeto V1, simplemente haz clic en cualquier parte y
+        arrastra el cursor. Si arrastras hacia arriba, V1 rotará en sentido de
+        las manecillas del reloj; mientras que si arrastras hacia abajo, rotará
+        en sentido contrario a las manecillas del reloj."
+        />
         <HechoPorC />
         <Box
           component="form"
@@ -125,6 +137,22 @@ const DivStilado = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #3b4453;
+  /* Media Query para ocultar en dispositivos con un ancho máximo de 768px (típicamente dispositivos móviles) */
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+const DivStilado2 = styled.div`
+  display: none;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: #3b4453;
+  /* Media Query para ocultar en dispositivos con un ancho máximo de 768px (típicamente dispositivos móviles) */
+  @media (max-width: 768px) {
+    display: flex;
+  }
 `;
 
 export default App;
